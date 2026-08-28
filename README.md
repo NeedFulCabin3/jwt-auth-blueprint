@@ -1,4 +1,4 @@
-JWT Auth Blueprint
+# JWT Auth Blueprint
 
 A practical, production-ready starting point for adding secure user registration, password hashing, and JWT token authentication to FastAPI backends.
 
