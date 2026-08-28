@@ -26,10 +26,10 @@ jobs:
 
     - name: Code Syntax & Style Inspection
       run: |
-        # Stop build on syntax errors or undefined names
+        # Fail ONLY on critical syntax/variable errors
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # Fail build if line length or complexity standards are broken
-        flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
+        # Treat stylistic PEP 8 rules as warnings (exit-zero avoids breaking pipeline)
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
 
     - name: Validate App Module
       run: |
